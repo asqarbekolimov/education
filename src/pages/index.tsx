@@ -1,6 +1,6 @@
 import React from "react";
 import { Roboto } from "@next/font/google";
-import { Heading } from "../components";
+import { Heading, Text } from "../components";
 const font = Roboto({
   weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
@@ -9,7 +9,8 @@ const font = Roboto({
 export default function Index() {
   return (
     <div className={font.className}>
-      <Heading tag="h1">children</Heading>
+      <Heading tag="h1">Heading</Heading>
+      <Text size="m">Text</Text>
     </div>
   );
 }
