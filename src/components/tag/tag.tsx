@@ -7,6 +7,7 @@ const Tag = ({
   size = "m",
   color = "primary",
   children,
+  ...props
 }: TagProps): JSX.Element => {
   return (
     <div
@@ -17,6 +18,7 @@ const Tag = ({
         [styles.primary]: color === "primary",
         [styles.green]: color === "green",
       })}
+      {...props}
     >
       {children}
     </div>
