@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Roboto } from "@next/font/google";
-import { Button, Heading, Input, Tag, Text, TextArea } from "../components";
+import {
+  Button,
+  Heading,
+  Input,
+  Rating,
+  Tag,
+  Text,
+  TextArea,
+} from "../components";
 const font = Roboto({
   weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
@@ -8,6 +16,7 @@ const font = Roboto({
 
 export default function Index() {
   const [isClick, setIsClick] = useState(false);
+  const [rating, setRating] = useState<number>(4);
   return (
     <div className={font.className}>
       <Heading tag="h1">Heading</Heading>
@@ -29,6 +38,8 @@ export default function Index() {
       </Button>
       <Input placeholder="Enter name" />
       <TextArea placeholder="enter text" />
+      <br />
+      <Rating rating={rating} isEditable={true} setRating={setRating} />
     </div>
   );
 }
