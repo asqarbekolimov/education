@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Roboto } from "@next/font/google";
-import { Button, Heading, Tag, Text } from "../components";
+import { Button, Heading, Input, Tag, Text, TextArea } from "../components";
 const font = Roboto({
   weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
@@ -27,6 +27,8 @@ export default function Index() {
       <Button appearance="primary" arrow="down">
         Arrow
       </Button>
+      <Input placeholder="Enter name" />
+      <TextArea placeholder="enter text" />
     </div>
   );
 }
