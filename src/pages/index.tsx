@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Roboto } from "@next/font/google";
 import {
   Button,
+  Card,
   Heading,
   Input,
   Rating,
@@ -40,6 +41,14 @@ export default function Index() {
       <TextArea placeholder="enter text" />
       <br />
       <Rating rating={rating} isEditable={true} setRating={setRating} />
+      <Card color="white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ratione
+        eaque deserunt tempore quod. Magnam eius quod vero sunt? Quis.
+      </Card>
+      <Card color="primary">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ratione
+        eaque deserunt tempore quod. Magnam eius quod vero sunt? Quis.
+      </Card>
     </div>
   );
 }
