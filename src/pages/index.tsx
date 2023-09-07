@@ -10,16 +10,20 @@ import {
   Text,
   TextArea,
 } from "../components";
+import { GetServerSideProps } from "next";
+import axios from "axios";
+import { withLayout } from "../../layout/layout";
+
 const font = Roboto({
   weight: ["400", "500", "700", "900"],
   subsets: ["latin"],
 });
 
-export default function Index() {
+function Index() {
   const [isClick, setIsClick] = useState(false);
   const [rating, setRating] = useState<number>(4);
   return (
-    <div className={font.className}>
+    <>
       <Heading tag="h1">Heading</Heading>
       <Text size="m">Text</Text>
       <Tag size="m" color="green">
@@ -49,6 +53,20 @@ export default function Index() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At ratione
         eaque deserunt tempore quod. Magnam eius quod vero sunt? Quis.
       </Card>
-    </div>
+    </>
   );
 }
+
+export default withLayout(Index);
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = await axios.post("http://localhost:8100/page-find", {
+    firstCategory: 0,
+  });
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
