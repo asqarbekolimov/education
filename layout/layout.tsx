@@ -3,17 +3,16 @@ import { LayoutProps } from "./layout.props";
 import Sidebar from "./sidebar/sidebar";
 import Header from "./header/header";
 import Footer from "./footer/footer";
+import styles from "./layout.module.css";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <>
-      <Header />
-      <div>
-        <Sidebar />
-        <div>{children}</div>
-      </div>
-      <Footer />
-    </>
+    <div className={styles.wrapper}>
+      <Header className={styles.header} />
+      <Sidebar className={styles.sidebar} />
+      <div className={styles.body}>{children}</div>
+      <Footer className={styles.footer} />
+    </div>
   );
 };
 
