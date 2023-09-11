@@ -7,7 +7,7 @@ import styles from "./layout.module.css";
 import {
   AppContextProvider,
   IAppContext,
-} from "../src/components/context/app.context";
+} from "../components/context/app.context";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (

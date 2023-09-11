@@ -12,8 +12,8 @@ import {
 } from "../components";
 import { GetServerSideProps } from "next";
 import axios from "axios";
-import { withLayout } from "../../layout/layout";
 import { MenuItem } from "../interfaces/menu.interface";
+import { withLayout } from "../layout/layout";
 
 const font = Roboto({
   weight: ["400", "500", "700", "900"],
