@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { PropsWithChildren, ReactNode, createContext, useState } from "react";
 import { MenuItem } from "../../interfaces/menu.interface";
 import { PageCategory } from "../../interfaces/page.interface";
 
@@ -17,7 +17,7 @@ export const AppContextProvider = ({
   firstCategory,
   menu,
   children,
-}: IAppContext & { children: ReactNode }): JSX.Element => {
+}: PropsWithChildren<IAppContext>): JSX.Element => {
   const [menuState, setMenuState] = useState<MenuItem[]>(menu);
 
   const setMenu = (newMenu: MenuItem[]) => {
