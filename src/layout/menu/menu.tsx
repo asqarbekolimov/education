@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "./menu.module.css";
 import cn from "classnames";
 import { IFirstLevelMenu, PageItem } from "../../interfaces/menu.interface";
-import { PageModel } from "../../interfaces/page.interface";
 import { useRouter } from "next/router";
 
 const Menu = (): JSX.Element => {
@@ -81,9 +80,9 @@ const Menu = (): JSX.Element => {
     return pages.map((p) => (
       <Link
         key={p._id}
-        href={`/${route}/${p.alias}`}
+        href={`/${route}/${p._id}`}
         className={cn(styles.thridLevel, {
-          [styles.thridLevelActive]: `/${route}/${p.alias}` === router.asPath,
+          [styles.thridLevelActive]: `/${route}/${p._id}` === router.asPath,
         })}
       >
         {p.title}
