@@ -5,9 +5,21 @@ import { MenuItem } from "../../interfaces/menu.interface";
 import { PageModel } from "../../interfaces/page.interface";
 import { ProductModel } from "../../interfaces/product.interface";
 import { firstLevelMenu } from "../../helpers/constants";
+import { CoursePageComponent } from "../../page-components";
 
-const Index = ({ menu, page, products }: PageProps): JSX.Element => {
-  return <div>{products.length}</div>;
+const Index = ({
+  menu,
+  page,
+  products,
+  firstCategory,
+}: PageProps): JSX.Element => {
+  return (
+    <CoursePageComponent
+      products={products}
+      firstCategory={firstCategory}
+      page={page}
+    />
+  );
 };
 
 export default withLayout(Index);
@@ -27,7 +39,7 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async ({
     `${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find`,
     { firstCategory: firstCategoryItem.id }
   );
-  const { data: page } = await axios.get<PageModel[]>(
+  const { data: page } = await axios.get<PageModel>(
     `${process.env.NEXT_PUBLIC_DOMAIN}/api/page-find/${slug}`
   );
   const { data: products } = await axios.post<ProductModel[]>(
@@ -44,7 +56,7 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async ({
 
 interface PageProps extends Record<string, unknown> {
   menu: MenuItem[];
-  page: PageModel[];
+  page: PageModel;
   products: ProductModel[];
   firstCategory: number;
 }
