@@ -2,7 +2,7 @@ import React from "react";
 import { CoursePageComponentProps } from "./course-page-component.props";
 import styles from "./course-page-component..module.css";
 import cn from "classnames";
-import { Heading, Tag } from "../../components";
+import { Heading, HhData, Tag } from "../../components";
 
 const CoursePageComponent = ({
   firstCategory,
@@ -29,7 +29,7 @@ const CoursePageComponent = ({
       </div>
 
       {/* HH data */}
-      <div>HH Data</div>
+      {page.hh && <HhData {...page.hh} />}
     </div>
   );
 };

@@ -9,11 +9,11 @@ export interface PageModel {
   category: string;
   tags: string[];
   description: string;
-  hh: Hh;
+  hh: HhData;
   advantages: Advantage[];
 }
 
-export interface Hh {
+export interface HhData {
   count: number;
   juniorSalary: number;
   middleSalary: number;
