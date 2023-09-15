@@ -2,7 +2,7 @@ import React from "react";
 import { CoursePageComponentProps } from "./course-page-component.props";
 import styles from "./course-page-component..module.css";
 import cn from "classnames";
-import { Heading, HhData, Tag } from "../../components";
+import { Advantages, Heading, HhData, Tag, Text } from "../../components";
 
 const CoursePageComponent = ({
   firstCategory,
@@ -30,6 +30,26 @@ const CoursePageComponent = ({
 
       {/* HH data */}
       {page.hh && <HhData {...page.hh} />}
+
+      {/* Advantages */}
+      {page.advantages && page.advantages.length && (
+        <>
+          <Heading tag="h2">Advantages</Heading>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
+
+      {/* Descriptions */}
+      <Text size="m">{page.description}</Text>
+
+      {/* Skills */}
+      <Heading tag="h2">Skills</Heading>
+      {page.tags.length &&
+        page.tags.map((t) => (
+          <Tag color="primary" key={t}>
+            {t}
+          </Tag>
+        ))}
     </div>
   );
 };
