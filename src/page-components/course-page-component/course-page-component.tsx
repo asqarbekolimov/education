@@ -2,7 +2,14 @@ import React from "react";
 import { CoursePageComponentProps } from "./course-page-component.props";
 import styles from "./course-page-component..module.css";
 import cn from "classnames";
-import { Advantages, Heading, HhData, Tag, Text } from "../../components";
+import {
+  Advantages,
+  Heading,
+  HhData,
+  Product,
+  Tag,
+  Text,
+} from "../../components";
 
 const CoursePageComponent = ({
   firstCategory,
@@ -18,7 +25,9 @@ const CoursePageComponent = ({
       </div>
 
       {/* Products */}
-      <div>Product</div>
+      <div>
+        {products && products.map((c) => <Product key={c._id} product={c} />)}
+      </div>
 
       {/* Vacations */}
       <div className={styles.hhTitle}>
