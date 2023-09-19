@@ -38,7 +38,8 @@
 }
 .hr,
 .description,
-.actions {
+.actions,
+.hr2 {
   grid-column: start / end;
 }
 .title {
