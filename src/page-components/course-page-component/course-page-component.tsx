@@ -39,7 +39,7 @@ const CoursePageComponent = ({
       {/* Products */}
       <div>
         {state.products &&
-          state.products.map((c) => <Product key={c._id} product={c} />)}
+          state.products.map((c) => <Product key={c.title} product={c} />)}
       </div>
 
       {/* Vacations */}
