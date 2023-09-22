@@ -38,6 +38,31 @@
     justify-self: normal;
   }
 }
+.panel {
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.success {
+  background-color: var(--green-light);
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.successTitle,
+.errorTitle {
+  font-weight: bold;
+}
+.error {
+  background-color: var(--red-light);
+}
+.error .close path {
+  stroke: var(--red);
+}
 
 @media screen and (max-width: 570px) {
   .reviewForm {
