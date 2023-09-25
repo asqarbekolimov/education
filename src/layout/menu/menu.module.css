@@ -41,12 +41,12 @@
   background-color: rgba(245, 245, 204, 0.4);
   border: 1px solid #e5e5e5;
 }
-.secondLevelBlock {
+/* .secondLevelBlock {
   display: none;
 }
 .secondLevelBlockActive {
   display: block;
-}
+} */
 .thridLevel {
   margin-bottom: 10px;
   cursor: pointer;
