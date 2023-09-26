@@ -8,6 +8,7 @@ import {
   AppContextProvider,
   IAppContext,
 } from "../components/context/app.context";
+import { ScrollUp } from "../components";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -16,6 +17,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
       <Sidebar className={styles.sidebar} />
       <div className={styles.body}>{children}</div>
       <Footer className={styles.footer} />
+      <ScrollUp />
     </div>
   );
 };
