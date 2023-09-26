@@ -21,6 +21,17 @@ const Product = motion(
     ): JSX.Element => {
       const [reviewOpen, setReviewOpen] = useState<boolean>(false);
 
+      const variants = {
+        visible: {
+          opacity: 1,
+          height: "auto",
+        },
+        hidden: {
+          opacity: 0,
+          height: 0,
+        },
+      };
+
       return (
         <div className={cn(className)} ref={ref} {...props}>
           <Card className={styles.product}>
@@ -108,21 +119,22 @@ const Product = motion(
               </Button>
             </div>
           </Card>
-          <Card
-            color="white"
-            className={cn(styles.reviews, {
-              [styles.opened]: reviewOpen,
-              [styles.closed]: !reviewOpen,
-            })}
+
+          <motion.div
+            animate={reviewOpen ? "visible" : "hidden"}
+            variants={variants}
+            initial={"hidden"}
           >
-            {product.reviews.map((r) => (
-              <div key={r._id}>
-                <Review review={r} />
-                <Divider />
-              </div>
-            ))}
-            <ReviewForm productid={product._id} />
-          </Card>
+            <Card color="white" className={cn(styles.reviews)}>
+              {product.reviews.map((r) => (
+                <div key={r._id}>
+                  <Review review={r} />
+                  <Divider />
+                </div>
+              ))}
+              <ReviewForm productid={product._id} />
+            </Card>
+          </motion.div>
         </div>
       );
     }
