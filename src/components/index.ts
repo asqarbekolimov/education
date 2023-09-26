@@ -14,3 +14,4 @@ export { default as ReviewForm } from "./review-form/review-form";
 export { default as Search } from "./search/search";
 export { default as Sort } from "./sort/sort";
 export { default as ScrollUp } from "./scroll-up/scroll-up";
+export { default as IconButton } from "./icon-button/icon-button";
