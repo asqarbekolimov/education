@@ -8,6 +8,14 @@
   margin-right: 5px;
   margin-top: 5px;
   transition: all 0.2s ease;
+  border: none;
+}
+
+.s {
+  padding: 8px;
+}
+.l {
+  padding: 12px;
 }
 
 .primary {
@@ -17,6 +25,23 @@
 
 .primary:hover {
   background-color: var(--primary-hover);
+}
+.success {
+  color: var(--white);
+  background-color: var(--green);
+}
+
+.success:hover {
+  background-color: var(--green-hover);
+  color: var(--green);
+}
+.failure {
+  color: var(--black);
+  background-color: var(--red);
+}
+
+.failure:hover {
+  background-color: var(--red-light);
 }
 .ghost {
   color: var(--primary);
@@ -36,6 +61,12 @@
 .down {
   transform: rotate(90deg);
   transition: all 0.2s ease;
+}
+.success svg {
+  fill: var(--white);
+}
+.success:hover svg {
+  fill: var(--green);
 }
 .primary svg,
 .ghost:hover svg {
