@@ -11,17 +11,19 @@
   background-color: var(--primary);
 }
 
-.primary svg* {
+.primary svg * {
   fill: var(--white);
 }
+
 .primary:hover {
   background-color: var(--primary-hover);
 }
+
 .white {
   background-color: var(--white);
 }
 
-.white svg* {
+.white svg * {
   fill: var(--primary);
 }
 .white:hover {

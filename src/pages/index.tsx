@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Roboto } from "@next/font/google";
+// import { Roboto } from "@next/font/google";
 import {
   Button,
   Card,
@@ -15,10 +15,10 @@ import axios from "axios";
 import { MenuItem } from "../interfaces/menu.interface";
 import { withLayout } from "../layout/layout";
 
-const font = Roboto({
-  weight: ["400", "500", "700", "900"],
-  subsets: ["latin"],
-});
+// const font = Roboto({
+//   weight: ["400", "500", "700", "900"],
+//   subsets: ["latin"],
+// });
 
 function Index({ firstCategory, menu }: HomeProps): JSX.Element {
   const [isClick, setIsClick] = useState(false);

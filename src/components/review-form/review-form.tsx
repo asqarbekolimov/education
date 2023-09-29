@@ -10,6 +10,8 @@ import { useForm, Controller } from "react-hook-form";
 import { IReviewForm, IReviewResponse } from "./review-form.interface";
 import axios from "axios";
 import CloseIcon from "./close.svg";
+import Error from "./error";
+import Success from "./success";
 
 const ReviewForm = ({
   productid,
@@ -97,22 +99,8 @@ const ReviewForm = ({
         </div>
       </div>
 
-      {isSuccess && (
-        <div className={cn(styles.success, styles.panel)}>
-          <div className={styles.successTitle}>Review sent successfully!</div>
-          <div>Thanks your review will published after testing</div>
-          <CloseIcon
-            className={styles.close}
-            onClick={() => setIsSuccess(false)}
-          />
-        </div>
-      )}
-      {error && (
-        <div className={cn(styles.error, styles.panel)}>
-          <div className={styles.errorTitle}>Something went wrong</div>
-          <CloseIcon className={styles.close} onClick={() => setError(false)} />
-        </div>
-      )}
+      {isSuccess && <Success setIsSuccess={setIsSuccess} />}
+      {error && <Error setError={setError} />}
     </form>
   );
 };

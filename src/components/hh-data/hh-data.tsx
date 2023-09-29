@@ -1,16 +1,16 @@
 import React from "react";
-import { HhData } from "../../interfaces/page.interface";
 import styles from "./hh-data.module.css";
 import Card from "../card/card";
 import RateIcon from "./rate.svg";
 import { convertToUSD } from "../../helpers/helpers";
+import { HhDataProps } from "./hh-data.props";
 
 const HhData = ({
   count,
   juniorSalary,
   middleSalary,
   seniorSalary,
-}: HhData): JSX.Element => {
+}: HhDataProps): JSX.Element => {
   return (
     <div className={styles.hh}>
       <Card className={styles.count}>

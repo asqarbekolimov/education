@@ -10,7 +10,7 @@ export interface PageModel {
   tags: string[];
   description: string;
   hh: HhData;
-  advantages: Advantage[];
+  advantages: AdvantageData[];
 }
 
 export interface HhData {
@@ -20,7 +20,7 @@ export interface HhData {
   seniorSalary: number;
 }
 
-export interface Advantage {
+export interface AdvantageData {
   title: string;
   description: string;
   id: string;

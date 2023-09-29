@@ -1,5 +1,5 @@
-import { Advantage } from "../../interfaces/page.interface";
+import { AdvantageData } from "../../interfaces/page.interface";
 
 export interface AdvantagesProps {
-  advantages: Advantage[];
+  advantages: AdvantageData[];
 }
