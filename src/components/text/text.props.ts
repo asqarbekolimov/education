@@ -5,6 +5,6 @@ export interface TextProps
     HTMLAttributes<HTMLParagraphElement>,
     HTMLParagraphElement
   > {
-  size: "s" | "m" | "l";
+  size?: "s" | "m" | "l";
   children: ReactNode;
 }
