@@ -64,6 +64,7 @@
   .mobileMenu a {
     display: block;
     margin-top: 10px;
+    color: var(--white);
   }
   .search {
     margin-top: 10px;
