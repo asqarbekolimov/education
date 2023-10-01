@@ -4,12 +4,17 @@ import { GetServerSideProps } from "next";
 import axios from "axios";
 import { MenuItem } from "../interfaces/menu.interface";
 import { withLayout } from "../layout/layout";
+import Seo from "../layout/seo/seo";
 
 function Index(): JSX.Element {
   const [isClick, setIsClick] = useState(false);
   const [rating, setRating] = useState<number>(4);
 
-  return <HomePageComponent />;
+  return (
+    <Seo>
+      <HomePageComponent />;
+    </Seo>
+  );
 }
 
 export default withLayout(Index);
