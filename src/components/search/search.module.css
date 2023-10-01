@@ -16,3 +16,22 @@
   height: 30px;
   padding: 7px;
 }
+.searchResponse {
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 103%;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.searchResponse div {
+  display: block;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--gray-light);
+  cursor: pointer;
+}
+.searchResponse div:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}

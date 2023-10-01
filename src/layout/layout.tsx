@@ -9,6 +9,7 @@ import {
   IAppContext,
 } from "../components/context/app.context";
 import { ScrollUp } from "../components";
+import { useRouter } from "next/router";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -26,11 +27,16 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   Component: FunctionComponent<T>
 ) => {
   return function withLayoutComponent(props: T): JSX.Element {
+    const router = useRouter();
     return (
       <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
-        <Layout>
+        {router.asPath === "/" ? (
           <Component {...props} />
-        </Layout>
+        ) : (
+          <Layout>
+            <Component {...props} />
+          </Layout>
+        )}
       </AppContextProvider>
     );
   };
